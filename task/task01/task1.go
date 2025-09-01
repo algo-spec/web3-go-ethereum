@@ -204,3 +204,20 @@ func OperateContract(client *ethclient.Client, privateKeyStr string, contractAdd
 	}
 	fmt.Println("✅ Count success", value)
 }
+
+func GetCountByCounter(client *ethclient.Client, contractAddress string) {
+	// 创建合约
+	counterContract, err := counter.NewCounter(common.HexToAddress(contractAddress), client)
+	if err != nil {
+		fmt.Println("❌ new counter contract error", err)
+		return
+	}
+
+	callOpt := &bind.CallOpts{Context: context.Background()}
+	value, err := counterContract.GetCount(callOpt)
+	if err != nil {
+		fmt.Println("❌ Count error", err)
+		return
+	}
+	fmt.Println("✅ Count success", value)
+}

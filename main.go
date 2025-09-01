@@ -148,5 +148,6 @@ func main() {
 // ]`)
 
 	// task01.DeployCounterContract(client, config.AppConfig.PrivateKey)
-	task01.OperateContract(client, config.AppConfig.PrivateKey, "0x17F285f4dd0a3A185eb428A3bBfdAc31c76861ef")
+	// task01.OperateContract(client, config.AppConfig.PrivateKey, "0x17F285f4dd0a3A185eb428A3bBfdAc31c76861ef")
+	task01.GetCountByCounter(client, "0x17F285f4dd0a3A185eb428A3bBfdAc31c76861ef")
 }
